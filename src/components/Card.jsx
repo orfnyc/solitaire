@@ -1,5 +1,5 @@
 import react from 'react'
-import './CardStyles.css';
+import '../styles/CardStyles.css';
 
 function Card({suit, value}) 
 {

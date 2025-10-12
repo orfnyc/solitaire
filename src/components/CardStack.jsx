@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card.jsx';
-import './CardStyles.css';
+import '../styles/CardStyles.css';
 
 function CardStack()
 {
