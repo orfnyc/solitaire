@@ -22,13 +22,12 @@
 
 .Hearts
 {
-    color: red;
+    color: rgb(255, 0, 0);
 }
 
 .Clubs
 {
     color: rgb(28, 28, 28);
-
 }
 
 .Diamonds
