@@ -22,7 +22,12 @@ export default class CardStack
      */
     removeTop()
     {
-
+        if (this.#cards.length != 0)
+        { 
+            this.#num_visible = Math.min(this.#cards.length-1, Math.max(1, this.#num_visible-1));
+            return this.#cards.shift();
+        }
+        return null;
     }
 
     /**
