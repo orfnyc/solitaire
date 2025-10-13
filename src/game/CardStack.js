@@ -1,6 +1,7 @@
 export default class CardStack
 {
     #cards
+    // TODO make this pascal case
     #num_visible
 
     /**
@@ -37,7 +38,11 @@ export default class CardStack
      */
     getCard(index)
     {
-
+        if (index < this.#cards.Length && index >= 0)
+        {
+            return this.#cards[index];
+        }
+        return null;
     }
 
     /**
@@ -50,16 +55,32 @@ export default class CardStack
      */
     validToAdd(card)
     {
-
+        if (this.#cards.length === 0)
+        {
+            return card.value === 13;
+        }
+        // TODO Fix this condition by adding colour attribute to card class
+        if ((((card.suit == "Spades" || card.suit == "Clubs" ) && (this.getCard(0).suit == "Hearts" || this.getCard(0).suit == "Diamonds") ) || ((club.suit == "Hearts" || club.suit == "Diamonds") && (this.getCard(0).suit == "Spades" || this.getCard(0).suit == "Clubs") ) ) && card.value === this.getCard(0).value - 1)
+        {
+            return true;
+        }
+        return false;
     }
 
     /**
-     * Adds a card to the top of the card stack. Increments number of visible
-     * cards by one to include the added card.
-     * @param {Card} card the card to be added
+     * Adds a card to the top of the card stack. 
+     * @param {Card} card - the card to be added
      */
     add(card)
     {
+        this.#cards.add(card);
+    }
 
+    /**
+     * Adds one to the num_visible attribute
+     */
+    incremenetNumVisible()
+    {
+        this.#num_visible += 1;
     }
 }
