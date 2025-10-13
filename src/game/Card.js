@@ -13,8 +13,8 @@ export default class Card
      */
     constructor(suit, value)
     {
-
-
+        this.self = suit;
+        this.value = value;
     }
 
     /**
@@ -22,7 +22,7 @@ export default class Card
      */
     get suit()
     {
-  
+        return this.#suit
     }
     
     /**
@@ -30,6 +30,6 @@ export default class Card
      */
     get value()
     {
-
+        return this.#value
     }
 }
