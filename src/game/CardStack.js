@@ -31,10 +31,11 @@ export default class CardStack
     }
 
     /**
-     * Removes teh top-most card of the card stack.
+     * Returns the card at the given index of the card stack.
+     * @param {Number} index - the index being accessed.
      * @returns {Card} returns the first element in cards. 
      */
-    getTop()
+    getCard(index)
     {
 
     }
