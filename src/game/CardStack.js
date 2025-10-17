@@ -40,7 +40,7 @@ export default class CardStack
      */
     getCard(index)
     {
-        if (index < this.#cards.Length && index >= 0)
+        if (index < this.#cards.length && index >= 0)
         {
             return this.#cards[index];
         }
