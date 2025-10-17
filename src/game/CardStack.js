@@ -61,8 +61,7 @@ export default class CardStack
         {
             return card.value === 13;
         }
-        // TODO Fix this condition by adding colour attribute to card class
-        if ((((card.suit == "Spades" || card.suit == "Clubs" ) && (this.getCard(0).suit == "Hearts" || this.getCard(0).suit == "Diamonds") ) || ((club.suit == "Hearts" || club.suit == "Diamonds") && (this.getCard(0).suit == "Spades" || this.getCard(0).suit == "Clubs") ) ) && card.value === this.getCard(0).value - 1)
+        if (this.getCard(0).color !== card.color && this.getCard(0).value+1 === card.value)
         {
             return true;
         }
