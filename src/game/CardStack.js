@@ -4,7 +4,7 @@ export default class CardStack
 {
     #cards
     // TODO make this pascal case
-    #num_visible
+    #numVisible
 
     /**
      * Constructor for a CardStack
@@ -12,7 +12,7 @@ export default class CardStack
     contructor()
     {
         this.cards = [];
-        this.num_visible = 0;
+        this.numVisible = 0;
     }
 
     /**
@@ -27,7 +27,7 @@ export default class CardStack
     {
         if (this.#cards.length != 0)
         { 
-            this.#num_visible = Math.min(this.#cards.length-1, Math.max(1, this.#num_visible-1));
+            this.#numVisible = Math.min(this.#cards.length-1, Math.max(1, this.#numVisible-1));
             return this.#cards.shift();
         }
         return null;
@@ -61,8 +61,7 @@ export default class CardStack
         {
             return card.value === 13;
         }
-        // TODO Fix this condition by adding colour attribute to card class
-        if ((((card.suit == "Spades" || card.suit == "Clubs" ) && (this.getCard(0).suit == "Hearts" || this.getCard(0).suit == "Diamonds") ) || ((club.suit == "Hearts" || club.suit == "Diamonds") && (this.getCard(0).suit == "Spades" || this.getCard(0).suit == "Clubs") ) ) && card.value === this.getCard(0).value - 1)
+        if (this.getCard(0).color !== card.color && this.getCard(0).value+1 === card.value)
         {
             return true;
         }
@@ -83,6 +82,6 @@ export default class CardStack
      */
     incremenetNumVisible()
     {
-        this.#num_visible += 1;
+        this.#numVisible += 1;
     }
 }

@@ -4,6 +4,7 @@ export default class Card
     // That means they can't be directly accessed by other classes
     #suit;
     #value;
+    #color;
 
     /**
      * Constructs a new Card object
@@ -15,6 +16,14 @@ export default class Card
     {
         this.self = suit;
         this.value = value;
+        if (this.#suit === 'Spades' || this.#suit === 'Clubs')
+        {
+            this.#color = 'red'; 
+        }
+        else
+        {
+            this.#color = 'black';
+        }
     }
 
     /**
@@ -31,5 +40,10 @@ export default class Card
     get value()
     {
         return this.#value
+    }
+
+    get color()
+    {
+        return this.#color
     }
 }
