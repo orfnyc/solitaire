@@ -4,7 +4,7 @@ export default class CardStack
 {
     #cards
     // TODO make this pascal case
-    #num_visible
+    #numVisible
 
     /**
      * Constructor for a CardStack
@@ -12,7 +12,7 @@ export default class CardStack
     contructor()
     {
         this.cards = [];
-        this.num_visible = 0;
+        this.numVisible = 0;
     }
 
     /**
@@ -27,7 +27,7 @@ export default class CardStack
     {
         if (this.#cards.length != 0)
         { 
-            this.#num_visible = Math.min(this.#cards.length-1, Math.max(1, this.#num_visible-1));
+            this.#numVisible = Math.min(this.#cards.length-1, Math.max(1, this.#numVisible-1));
             return this.#cards.shift();
         }
         return null;
@@ -82,6 +82,6 @@ export default class CardStack
      */
     incremenetNumVisible()
     {
-        this.#num_visible += 1;
+        this.#numVisible += 1;
     }
 }
