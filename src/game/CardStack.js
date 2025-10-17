@@ -1,3 +1,5 @@
+import Card from './Card';
+
 export default class CardStack
 {
     #cards
@@ -75,7 +77,7 @@ export default class CardStack
     {
         this.#cards.add(card);
     }
-
+        
     /**
      * Adds one to the num_visible attribute
      */
